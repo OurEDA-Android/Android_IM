@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="quejianming.com.im">
+
+    <!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
+    <!-- <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> -->
+    <!-- <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" /> -->
+    <!-- <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> -->
+    <!-- <permission -->
+    <!-- android:name="cn.bmob.permission.push" -->
+    <!-- android:protectionLevel="normal" > -->
+    <!-- </permission> -->
+    <!-- <uses-permission android:name="cn.bmob.permission.push" /> -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 监听网络的变化 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 设备休眠 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <!-- BmobPush SDK权限 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- &lt;!&ndash; IM聊天所需的Push start&ndash;&gt; -->
+        <!-- <service -->
+        <!-- android:name="cn.bmob.push.lib.service.PushService" -->
+        <!-- android:exported="true" -->
+        <!-- android:label="PushService" -->
+        <!-- android:permission="cn.bmob.permission.push" -->
+        <!-- android:process="cn.bmob.push" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="cn.bmob.push.lib.service.PushService" /> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+
+
+        <!-- <receiver android:name="cn.bmob.push.PushReceiver" > -->
+        <!-- <intent-filter android:priority="2147483647" > &lt;!&ndash; 优先级加最高 &ndash;&gt; -->
+        <!-- &lt;!&ndash; 系统启动完成后会调用 &ndash;&gt; -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- &lt;!&ndash; 解锁完成后会调用 &ndash;&gt; -->
+        <!-- <action android:name="android.intent.action.USER_PRESENT" /> -->
+        <!-- &lt;!&ndash; 监听网络连通性 &ndash;&gt; -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+        <!-- &lt;!&ndash;聊天消息接收器 &ndash;&gt; -->
+        <!-- <receiver android:name=".MyMessageReceiver" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="cn.bmob.push.action.MESSAGE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+
+        <!-- &lt;!&ndash; IM聊天所需的Push end&ndash;&gt; -->
+
+        <service
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:permission=""
+            android:process="cn.bmob.push">
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="cn.bmob.push.PushReceiver">
+            <intent-filter android:priority="2147483647">
+
+                <!-- 优先级加最高 -->
+                <!-- 系统启动完成后会调用 -->
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- 解锁完成后会调用 -->
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <!-- 监听网络连通性 -->
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 设置bmob appkey -->
+        <meta-data
+            android:name="Bmob_APP_KEY"
+            android:value="0157a0303696698edec21e03c0c37b4f" />
+        <!-- bmobim end -->
+        <activity
+            android:name=".RegisterActivity"
+            android:label="@string/title_activity_register" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".AddFriend"
+            android:label="@string/title_activity_add_friend" />
+        <activity
+            android:name=".Chat"
+            android:label="@string/title_activity_chat" />
+
+        <service
+            android:name=".ChatService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>

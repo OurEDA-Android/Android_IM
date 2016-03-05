@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context="com.quejianming.sockettext.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <EditText
+            android:id="@+id/edit_connect"
+            android:text="192.168.56.1"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="match_parent" />
+        <EditText
+            android:id="@+id/edit_connect_duan"
+            android:text="62537"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="连接"
+            android:id="@+id/btn_connect"
+            android:layout_gravity="right" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="发送"
+            android:id="@+id/btn_send"
+            android:layout_gravity="right"
+            />
+    </LinearLayout>
+</LinearLayout>
