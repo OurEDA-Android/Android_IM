@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Chat"
+    android:background="@drawable/sliding_menu_background"
+    >
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_chat"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+
+        <EditText
+            android:layout_margin="5dp"
+            android:textSize="16sp"
+            android:id="@+id/et_chat"
+            android:layout_weight="8"
+            android:layout_width="0dp"
+            android:background="@drawable/rectangle_chat"
+            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/btn_chatSend"
+            android:layout_margin="5dp"
+            android:layout_width="0dp"
+            android:background="@drawable/rectangle"
+            android:text="发送"
+            android:layout_weight="2"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</LinearLayout>
